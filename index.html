@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Basic programing Language Known">
+    <meta name="keywords" content="SQL Commands">
+    <title>Smart Codeer</title>
+    <style>
+        body {
+            background-image: url("project.jpg");
+        }
+
+        .harshu {
+            color: white;
+            font-size: 50px;
+        }
+
+        .harshu1 {
+            color: orange;
+            font-size: 35px;
+        }
+
+        span {
+            display: none;
+        }
+
+        :target {
+            display: block;
+        }
+
+        @keyframes radial-pulse {
+            0% {
+                box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.5);
+            }
+
+            100% {
+                box-shadow: 0 0 0 30px rgba(0, 0, 0, 0);
+            }
+        }
+
+
+        #anim {
+            animation: shadow 2s infinite;
+        }
+
+        @keyframes shadow {
+            from {
+                box-shadow: 0px 0px 0px #888888;
+            }
+
+            to {
+                box-shadow: 10px 10px 5px #888888;
+            }
+        }
+
+        @-webkit-keyframes myself {
+            from {
+                top: -100px;
+                opacity: 0;
+            }
+
+            to {
+                top: 0px;
+                opacity: 1;
+            }
+        }
+
+        @keyframes myself {
+            from {
+                top: -100px;
+                opacity: 0;
+            }
+
+            to {
+                top: 0px;
+                opacity: 1;
+            }
+        }
+
+
+        .modal {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal:target {
+            display: table;
+            position: absolute;
+        }
+
+
+        .modal-dialog {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+
+        .modal-dialog .modal-content {
+            margin: auto;
+            background-color: #f3f3f3;
+            position: relative;
+            padding: 0;
+            outline: 0;
+            border: 1px #777 solid;
+            text-align: justify;
+            width: 80%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            -webkit-animation-name: myself;
+            -webkit-animation-duration: 0.5s;
+            animation-name: myselfś;
+            animation-duration: 0.5s;
+        }
+
+        .closebtn {
+            text-decoration: none;
+            float: right;
+            font-size: 35px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .closebtn:hover,
+        .closebtn:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .container {
+            padding: 2px 16px;
+        }
+
+        header {
+            background-color: #5cb85c;
+            font-size: 25px;
+            color: white;
+        }
+
+        footer {
+            background-color: #5cb85c;
+            font-size: 20px;
+            color: white;
+        }
+
+        .lang {
+            background-color: white;
+            color: black;
+        }
+
+        .icon {
+            background-color: whitesmoke;
+            color: black;
+        }
+    </style>
+    <style type="text/css">
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-bar a {
+            text-decoration: none;
+            color: black;
+            display: block;
+        }
+
+        .nav-bar>ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-bar>ul>li>a {
+            padding: 10px;
+            background: lightgrey;
+        }
+
+        .nav-bar>ul>li>a:hover {
+            background: #173459;
+            color: #f8f9f9;
+        }
+
+        .nav-bar .active {
+            background: #173459;
+            color: #f8f9f9;
+        }
+
+        .nav-bar>ul>li {
+            float: left;
+            width: 25%;
+            /* 100% / 4 (number of li elements) = 25% */
+            text-align: center;
+        }
+
+        #outset {
+            width: 10rem;
+            background: #cef;
+            border: 1.4rem solid;
+            border-image: url("project.jpg")40;
+            border-image-outset: 1.5;
+            margin: 2.1rem;
+        }
+    </style>
+    <style type="text/css">
+        button {
+            font-family: sans-serif;
+            border: none;
+            padding: 10px 20px;
+            font-size: 20px;
+            outline: none;
+            margin: 10px;
+
+        }
+
+        #button1 {
+            background-color: rgb(23, 52, 89);
+            color: #f8f9f9;
+            box-shadow: .5px .5px 1px 2px #000000;
+        }
+
+        .border {
+            width: 350px;
+            background: lightgrey;
+            margin: 10px;
+        }
+
+        #color {
+            border-style: solid;
+            border-width: 10px;
+            border-color: blue red blue red;
+        }
+
+        #color2 {
+            border-style: solid;
+            border-width: 10px;
+            border-color: palevioletred;
+        }
+
+        #color3 {
+            border-style: solid;
+            border-width: 10px;
+            border-color: black;
+        }
+    </style>
+    <style type="text/css">
+        * {
+            box-sizing: border-box;
+        }
+
+        input[type="checkbox"],
+        input[type="radio"] {
+            display: none;
+        }
+
+        label {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #0076ff;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3), 0 7px 21px 0 rgba(0, 0, 0, 0.20);
+        }
+
+        label>span {
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            border: 3px solid #0076ff;
+            border-radius: 50%;
+            margin-right: 30px;
+        }
+
+        input[type="checkbox"]:checked+label,
+        input[type="radio"]:checked+label {
+            background: #173459;
+            color: white;
+        }
+
+        input[type="checkbox"]:checked+label>span,
+        input[type="radio"]:checked+label>span {
+            background: #0076ff;
+        }
+
+        .animate {
+            width: 250px;
+            height: 250px;
+            background: #173459;
+            color: #f8f9f9;
+            border: 5px solid #903C56;
+            transition-duration: 2s;
+        }
+
+        #skew:hover {
+            transform: skew(30deg, 30deg);
+        }
+    </style>
+    <style type="text/css">
+        input,
+        textarea {
+            outline: none;
+            border: none;
+            padding: 10px;
+            background: #0076ff;
+            color: white;
+            box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3), 0 7px 21px 0 rgba(0, 0, 0, 0.20);
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: white;
+        }
+
+        /* apply styles when focused */
+        input:focus,
+        textarea:focus {
+            background: #173459;
+            border-bottom: 5px solid #903C56;
+        }
+    </style>
+    <style type="text/css">
+        .lightbox1 {
+            display: table;
+            position: fixed;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            transition-duration: 2s;
+        }
+
+        .lightbox1:target {
+            top: 0;
+        }
+
+        .lightbox1-content {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: none;
+        }
+
+        .lightbox2 {
+            display: table;
+            position: fixed;
+            top: -100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            transition-duration: 2s;
+        }
+
+        .lightbox2:target {
+            top: 0;
+        }
+
+        .lightbox2-content {
+            display: table-cell;
+            vertical-align: top;
+            text-align: none;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+
+
+            font-size: 20px;
+            font-weight: 300;
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="harshu">
+        <marquee direction="left">
+            <h><i>Welcome To My websites</i></h>
+        </marquee>
+        <hr size="5px" color="red">
+    </div>
+    <font color="orange"><i><b>Become Smart One...</i></b></font>
+    <hr>
+
+    <section>
+        <div>
+            <div class="nav-bar">
+                <ul>
+                    <li><a href="#tar1" class="active"><b><i>Home</i></b></a></a></li>
+                    <li><a href="#id01"><b><i>My..Self..</i></b></a></a></li>
+                    <li><a href="#tar3"><b><i> Contact</i></b></a></a></li>
+                    </class>
+                    <li><a href="#tar4"><b><i>Login</i></b></a></a></li>
+                </ul>
+            </div>
+            <br>
+            <br>
+            <span id="tar1">
+                <div class="icon">
+                    <font color="red">You have already in Home Page</font>
+                </div>
+            </span>
+            <span id="tar3">
+                <div class="border1" id="color2">
+                    <font color="orange"><b>You will get Contact Me in Following ways:</b><br>
+                        <hr>
+                        <a href="https://www.snapchat.com/add/harshadteli1148?share_id=dqv3WcMIIUE&locale=en-IN"><button
+                                id="button1">SNAPCHAT</button></a>
+                        <hr>
+                        <a href="https://www.instagram.com/ha.rshad4727?igsh=MTlmbHFkMTlnMnh2dQ=="><button
+                                id="button1">INSTAGRAM</button></a>
+                        <hr>
+                        <hr>
+                    </font>
+                </div>
+            </span>
+            <span id="tar4">
+                <div class="border" id="color3">
+                    <h2>Login Up</h2>
+                    <hr>
+                    <input type="text" placeholder="Enter email"><br>
+                    <hr>
+                    <input type="text" placeholder="Enter Password"><br>
+                    <hr>
+                    <hr size="10px">
+                    <button id="button1" onclick="alert('Sorry...This is only For Trial');">SUMBIT</button></button>
+                </div>
+        </div>
+        </span>
+
+    </section>
+    <hr size="2px">
+    <div id="anim">
+        <font color="red"><b>This Website can be Created as Educational Purpose....<br>
+                <font color="pink">This web is an Example of Fronted Web</font>
+            </b></font>
+    </div>
+    <hr>
+    <div id="id01" class="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <header class="container">
+                    <a href="#" class="closebtn">x</a>
+                    <h2><b><i>Harshad Teli</i></b></h2>
+                </header>
+                <div class="container">
+                    <centre>
+                        <div id="outset"> <img src="my_photo.png" width="150px"></div>
+                    </centre>
+                    <p>Hello...<br> I am Harshad From Radhanagri <br> This website can give the introduce about computer
+                        language</p>
+                    <p>Let's known about the computer Language has been used..</p>
+                    <p>I am working with Web Fronted developing and backend Development is work in progreess</p>
+                    <p>Also,I am interested in C,C++,Java,Python..& other language programing<br>
+                        <hr>
+                        <font color="orange"><b>Here I am working with oop's c++ programing</b><br>
+                            There pdf's are available.You need pdf msg me on social media's way to mentioned<br>
+                            in this Website</font>
+                        <hr>
+                        <font color="red">
+                            <p>This Website can not be stored the user Information<br>
+                                This Information can be vanish when you close the Tabs</p>
+                        </font>
+                        <hr>
+                        <font color="green">
+                            <p>So,you can Fill Information Friendly</p>
+                        </font>
+
+
+                </div>
+                <footer class="container">
+                    <p>Thank You.....</p>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <hr>
+    </header>
+    <main>
+        <section>
+            <div>
+
+                <form>
+                    <div class="lang">
+                        <big>Here, I am Created the sample form </big><br>
+                        <font color="green">Click the Following button to see the Form:</font>
+                        <hr>
+                        <button id="button1"><a href="#form">FORM</a></button>
+                        <div class="lightbox1" id="form">
+                            <a href="#" class="close">CLOSE</a>
+                            <div class="lightbox1-content">
+                                <div class="border" id="color">
+                                    <h><b>Sample Form:</b></h><br>
+                                    <hr>
+                                    <input type="text" placeholder="Enter Name">
+                                    <hr>
+                                    <input type="text" placeholder="Roll No">
+                                    <hr>
+                                    <input type="date" placeholder="Date">
+                                    <hr><br>
+                                    <select name="cource" id="cource">
+                                        <option value="No cource">Select course</option>
+                                        <option value="B.C.S">B.C.S</option>
+                                        <option value="B.C.A">B.C.A</option>
+                                        <option value="B.B.A">B.B.A</option>
+                                        <option value="B.A">B.A</option>
+                                    </select>
+                                    <hr>
+                                    <input type="text" placeholder="Mobile No">
+                                    <hr>
+                                    <select name="Language" id="Language">
+                                        <option value="no">Select Language</option>
+                                        <option value="C">C</option>
+                                        <option value="C++">C++</option>
+                                        <option value="Python">Python</option>
+                                        <option value="Java">Java</option>
+                                        <option value="R programing">R programing</option>
+                                        <option value="C#">C#</option>
+                                        <option value=".NET">.NET</option>
+                                        <option value="SQL">SQL</option>
+                                    </select>
+                                    <hr size="10px">
+                                    <button id="button1" onclick="alert('Sumbit Successful');">SUMBIT</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <hr>
+        <div>
+            <font size="1px" color="orange">
+                <h1>Let's known about Top 10 programming language</h1>
+            </font>
+            <div class="lang">
+                <ol>
+                    <li>Structured Query Language(SQL)</li>
+                    <li>Python</li>
+                    <li>Java</li>
+                    <li>Java Script</li>
+                    <li>C#</li>
+                    <li>C++</li>
+                    <li>R Language</li>
+                    <li>C</li>
+                    <li>Go</li>
+                    <li>Perl</li>
+                </ol>
+            </div>
+        </div>
+        <hr>
+        <h2>
+            <font color="orange">Let's Fun with C </font>
+        </h2>
+        <p>
+            <font color="white"><b> What is the output of Following Program</b></font>
+        </p>
+        <pre><font color="red">
+    #include<`stdio.h>
+    int main()
+    {
+      int x=printf("Hello World");
+      printf("%d",x);
+      return 0;
+    }</font>
+  </pre>
+
+        <form>
+            <font color="pink">
+                <input type="radio" name="person" value="Mang Juan" id="mang-juan" />
+                <label for="mang-juan"><span></span>Hello World</label>
+
+                <input type="radio" name="person" value="Mang Pedro" id="mang-pedro" />
+                <label for="mang-pedro"><span></span>4</label>
+
+                <input type="radio" name="person" value="Mang Lito" id="mang-lito" />
+                <label for="mang-lito"><span></span>Hello World11</label>
+
+                <input type="radio" name="person" value="Mang Arturo" id="mang-arturo" />
+                <label for="mang-arturo"><span></span>Error Occur</label>
+            </font><br>
+            <button id="button1" onclick="alert('Check the Answer at bottom of Web');">SUMBIT</button>
+            <hr>
+        </form>
+        <div>
+            <font color="orange">
+                <h><big><b>Let's Learn the Syntax of SQL Queery's</b></big></h>
+            </font>
+            <div class="animate" id="skew"><b>Type of SQL Query</b>
+                <font size="1px" color="red">[Tap Here]</font></small><br>
+                <ol>
+                    <li>DDL</li>
+                    <li>DML</li>
+                    <li>DCL</li>
+                    <li>TCL</li>
+                    <li>DQL</li>
+                </ol>
+            </div>
+            <hr>
+            <div class="lang">
+                Now, We can learn some SQL commands<br>
+                <font color="green">Click the language following to you learn.</font>
+            </div>
+            <hr>
+            <big>
+                <a href="#1">
+                    <font color="orange">1.DDL-Data Definiton Language</font>
+                </a>
+            </big><br>
+            <div class="lightbox2" id="1">
+                <a href="#" class="close">CLOSE</a>
+                <div class="lightbox2-content">
+
+                    <hr>
+                    <h>
+                        <font color="pink">I]Create Command:-</font>
+                    </h><br>
+                    <pre>
+            <font color="orange">Syntax:-</font><font color="red">1)Create database_name;</font><br>
+            <font color="red">2)Create table table_name;</font>
+        </pre>
+                    <h>
+                        <font color="pink">II]Drop Command:-</font>
+                    </h><br>
+                    <pre>
+            <font color="orange">Syntax:-</font><font color="red">1)Drop database_name;</font><br>
+        </pre>
+                    <h>
+                        <font color="pink">III]Truncate Command:-</font>
+                    </h><br>
+                    <pre>
+            <font color="white">To remove all records:-</font>
+            <font color="orange">Syntax:-</font>
+            <font color="red">Truncate table table_name;</font><br>
+        </pre>
+                </div>
+            </div>
+            <big>
+                <a href="#2">
+                    <font color="orange">2.DML-Data Manuculation Language</font>
+                </a>
+            </big><br>
+            <pre>
+                <div class="lightbox1" id="2">
+                    <a href="#" class="close">CLOSE</a>
+                    <div class="lightbox1-content">
+    <h><font color="pink">I]Insert Command:-</font></h><br>
+            <font color="white">To insert the data into table:-</font>
+            <font color="orange">Syntax:-</font>
+    <font color="red">insert into table table_name(col1,col2,..)
+    values(val1,val2,..);</font><br>
+            <h><font color="pink">II]Update Command:-</font></h><br>
+            <font color="white">To modify records:-</font>
+            <font color="orange">Syntax:-</font>
+    <font color="red">update table_name set col_name=val1,
+        col_name2=val2,
+        where(condition);
+</font><br>
+    <h><font color="pink">III]Delete Command:-</font></h><br>
+    <font color="white">To deleted inserted data:-</font>
+    <font color="orange">Syntax:-</font>
+<font color="red">Delete from table_name where condition;
+condition- condition is for choose 
+a particular Record
+</font><br>
+</div>
+</div>
+</pre>
+    </main>
+    <hr>
+    <button id="button1" onclick="alert('Answer is Hello World11');">Check Answer</button>
+    <hr>
+    <p><textarea placeholder="Add Your Comment..." style="width: 300px; height: 300px"></textarea></p>
+    <button id="button1" onclick="alert('Thanks Your Feedback.......');">SUMBIT</button>
+    <hr size="20px" color="black">
+    <footer>
+        <marquee direction="right">
+            <h><b><i>Thank You....</i></b></h>
+        </marquee>
+    </footer>
+</body>
+</html>
